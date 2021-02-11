@@ -1,0 +1,35 @@
+Neural Networks
+Layers, which are combined into a network (or model)  
+The input data and corresponding targets  
+The loss function, which defines the feedback signal used for learning  
+The optimizer, which determines how learning proceeds
+
+Data tensors 
+Vector data—2D tensors of shape (samples, features)  --Often processed by densely connected layers(The Dense layer in Kreas)
+Timeseries data or sequence data—3D tensors of shape (samples, timesteps, features) --Typically connected by recurrent layers such as LSTM layer.
+Images—4D tensors of shape (samples, height, width, channels) or (samples, channels, height, width)  -- typically processed by 2D convolution layers such as Conv2D.
+Video—5D tensors of shape (samples, frames, height, width, channels) or (samples, frames, channels, height, width)
+*When building the networks, need to decide:
+How many layers to use
+How many hidden units to choose for each layer(weights)
+
+Models:
+Describe how layers connected(network architecture) 
+Sequential
+Two-Branch
+Mutilehead
+Inception blocks
+
+Loss functions and optimizers 
+Key to configuring the learning process
+Loss function (objective function)—The quantity that will be minimized during training. It represents a measure of success for the task at hand.  
+Optimizer—Determines how the network will be updated based on the loss function. It implements a specific variant of stochastic gradient descent (SGD).
+
+*A neural network that has multiple outputs may have multiple loss functions (one per output). But the gradient-descent process must be based on a single scalar loss value; so, for multi loss networks, all losses are combined (via averaging) into a single scalar quantity.
+
+The general rule for the loss functions and optimizers
+Binary cross-entropy for a two-class classification problem(Relu activation + Sigmoid)
+Categorical cross-entropy for a many-class classification problem
+Mean squared error for a regression problem
+Connectionist temporal classification (CTC) for a sequence-learning problem
+
